@@ -43,8 +43,10 @@ def getKittenByGen(gen_id,stype,good_array,virgin = False):
 
 
 ####
-#getKittenByGen(generation_no,sales or sire,True or False for virgin) 
-###
+#getKittenByGen(generation_no,sales or sire,[list of cattributes],True or False for virgin) 
+####
+            
 good_array = ["spock","beard","mauveover","cymric","gold","otaku","saycheese","googly","mainecoon","whixtensions","wingtips","chestnut","jaguar"]
+
 #getKittenByGen(7,"sale",good_array,False)
 getKittenByGen(6,"sire",good_array)
