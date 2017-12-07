@@ -26,7 +26,7 @@ def getKittenByGen(gen_id,stype,good_array,virgin = False):
                         description = attr['description']
                         if description in good_array:
                             description = "*"+description+"*"
-                        cattribute_list.append(description+" ("+str(fz[attr['description']]['count'])+"%)"+)
+                        cattribute_list.append(description+" ("+str(fz[attr['description']]['count'])+"%)")
                     for attribute in cattribute['cattributes']:
                         attribute = attribute['description']
                         if attribute in good_array and (len(cattribute['children']) == 0 or not virgin):
