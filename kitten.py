@@ -22,6 +22,8 @@ def getKittenByGen(gen_id,stype,good_array,virgin = False):
                     #fix for api change
                     cattribute_list = []
                     for attr in cattribute['cattributes']:
+                        if attr['description'] in good_array:
+                            attr['description']  = "*"+attr['description'] +"*"
                         cattribute_list.append(attr['description'])
                     for attribute in cattribute_list:
                         if attribute in good_array and (len(cattribute['children']) == 0 or not virgin):
@@ -33,7 +35,9 @@ def getKittenByGen(gen_id,stype,good_array,virgin = False):
                             print("=====================================================")
                             break
             offset = offset + 100
+            print("=====================================================")
             print(offset,stype,"kitties bening scanned")
+            print("=====================================================")
             #no more kitties left in API 
             if len(json_data['auctions']) <= 0:
                 remaining = False
@@ -48,5 +52,5 @@ def getKittenByGen(gen_id,stype,good_array,virgin = False):
             
 good_array = ["spock","beard","mauveover","cymric","gold","otaku","saycheese","googly","mainecoon","whixtensions","wingtips","chestnut","jaguar"]
 
-#getKittenByGen(7,"sale",good_array,False)
-getKittenByGen(6,"sire",good_array)
+getKittenByGen(6,"sale",good_array,True)
+#getKittenByGen(6,"sire",good_array)
