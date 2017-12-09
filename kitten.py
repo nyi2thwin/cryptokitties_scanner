@@ -22,7 +22,7 @@ def getKittenByGen(gen_id,stype,good_array,virgin = False, no_of_cattribute_math
             #https://api.cryptokitties.co/auctions?offset=0&limit=12&type=sale&status=open&search=gen:3+gen:2&sorting=cheap&orderBy=current_price&orderDirection=asc&parents=false
             gen_string =""
             
-            for i in range(gen_id):
+            for i in range(0,gen_id):
                 gen_string += str(i+1)+","
             #add cooldown 
             gen_string += "+cooldown:"+cooldown_dict[gen_id]
@@ -72,7 +72,7 @@ def getKittenByGen(gen_id,stype,good_array,virgin = False, no_of_cattribute_math
 #getKittenByGen(generation_no,sales or sire,[list of cattributes],True or False for virgin,no_of_cattribute_math) 
 ####https://api.cryptokitties.co/auctions?offset=0&limit=12&type=sale&status=open&search=gen:3&sorting=cheap&orderBy=current_price&orderDirection=asc&parents=false
             
-good_array = ["spock","calicool","tigerpunk","beard","gold","otaku","saycheese","googly","whixtensions","wingtips","jaguar"]
+good_array = ["spock","cymric","violet","bloodred","scarlet","calicool","tigerpunk","beard","gold","otaku","saycheese","googly","whixtensions","wingtips","jaguar"]
 no_of_cattribute_math = 3
 getKittenByGen(3,"sale",good_array,True,no_of_cattribute_math)
 #getKittenByGen(6,"sire",good_array)
